@@ -1,0 +1,48 @@
+.rating {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateY(180deg);
+	display: flex;
+	
+}
+
+.rating input {
+	display:none
+}
+
+.rating label{
+	display: block;
+	cursor: pointer;
+	width: 50px;
+	padding-left: 10px;
+}
+
+.rating label::before{
+	content: '\f005';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	position: relative;
+	display: block;
+	font-size: 50px;
+	color: black;
+}
+.rating label::after{
+	content: '\f005';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	font-size: 50px;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	display: block;
+	color: rgb(56, 224, 14);
+	transition: 0.5s;
+	text-shadow: 0 2px 5px rgba(0, 0,0, 0.5);	
+}
+
+.rating label:hover::after,
+.rating label:hover ~ label::after,
+.rating input:checked ~label::after{
+	opacity: 1;
+}
